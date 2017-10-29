@@ -1,5 +1,5 @@
 import pandas as pd
-
+import numpy as np
 #path = '../umpc_food_101_df.csv'
 def train_test_data_set():
     path = '../upmc_food_101_df.csv'
@@ -8,13 +8,19 @@ def train_test_data_set():
     category_name = data['category'].unique()
     categories = {}
     size = len(category_name)
-
+    print(size)
     for i in range(size):
         categories[category_name[i]] = i
     
     category_id = pd.DataFrame(data = categories,index=range(1))
     data['category_id'] = [categories[item] for item in data['category'].values]
-    
+    #print(len(data.index))
+    #print("\n")
+
+    #clean data
+    data['recipe'] = data['recipe'].apply(lambda x: x if type(x) == str  else 'remove')
+    data['recipe'] = data['recipe'].apply(lambda x: x if len(x) > 20 else 'r')
+    data = data[data['recipe'] != 'r']
     
     df_list = {'category':[],'recipe':[],'category_id':[]}
     test_df = pd.DataFrame(data = df_list)
@@ -25,11 +31,13 @@ def train_test_data_set():
     data = data[['category','category_id','recipe']]
     test_index = test_df.index.values
     train_df = data.drop(test_index)
+    test_df['category_id'] = test_df['category_id'].apply(lambda x: int(x))
 
     test_df = test_df.sample(frac = 1)
     train_df = train_df.sample(frac = 1)
 
 #    print(train_df.head())
+    
     train_df.reset_index(inplace = True)
     train_df.drop('index',axis = 1,inplace =True)
     test_df.reset_index(inplace = True)
@@ -40,14 +48,13 @@ def train_test_data_set():
  #   print(train_df.head())
     print 'there are {} samples in test dataset\n'.format(test_size)
   #  print(test_df.head())
-
     train_df.to_csv('../train_df.csv')
     test_df.to_csv('../test_df.csv')
-    category_id.to_csv('../category_id.csv')
+    category_id.to_csv('../category_id.csv',index = False)
 
     print('finish test/train data loading\n')
 
-def load_data_set():
+def load_dataset():
     try:
         test_df = pd.read_csv('../test_df.csv')
         train_df = pd.read_csv('../train_df.csv')
@@ -59,6 +66,9 @@ def load_data_set():
         train_df = pd.read_csv('../train_df.csv')
         categories = pd.read_csv('../category_id.csv')
     
+    #test_df.dropna()
+    #print(len(test_df.index))
+
     data_dic = {}
     
     category_id = {}
@@ -73,7 +83,6 @@ def load_data_set():
     test['data'] = list(test_df['recipe'].values)
     test['target'] = test_df['category_id'].values
 
-
     data_dic['categories'] = category_id
     data_dic['train'] = train
     data_dic['test'] = test
@@ -87,5 +96,5 @@ print(train_df.head())'''
 #print(type(data['category'].values))
 #print data.head(5)
 #print(categories)
-
-load_data_set()
+#train_test_data_set()
+#load_dataset()
