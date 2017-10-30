@@ -66,7 +66,7 @@ def load_dataset():
         test_df = pd.read_csv('../test_df.csv')
         train_df = pd.read_csv('../train_df.csv')
         categories = pd.read_csv('../category_id.csv')
-    
+    print('loading dataset.')
     data_dic = {}
     
     category_id = {}
@@ -95,5 +95,4 @@ print(train_df.head())'''
 #print(type(data['category'].values))
 #print data.head(5)
 #print(categories)
-
 #load_dataset()

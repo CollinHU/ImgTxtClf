@@ -34,17 +34,17 @@ class StemmedCountVectorizer(CountVectorizer):
 NB_text_clf = Pipeline([('vect',StemmedCountVectorizer(stop_words = 'english')),
 						('tfidf', TfidfTransformer()),
 						('mnb',MultinomialNB())])
-'''
+
 stemmed_parameter = {'vect__ngram_range':[(1,1),(1,2)],
 					'tfidf__use_idf':[True,False],
 					'mnb__alpha':[1e-2,1e-3],}
-'''
-#model_selection_stemmed = GridSearchCV(NB_text_clf, stemmed_parameter, n_jobs = -1)
-#model_selection_stemmed = model_selection_stemmed.fit(X_train.data, X_train.target)
-NB_text_clf = NB_text_clf.fit(X_train['data'],X_train['target'])
-NB_predicted = NB_text_clf.predict(X_test['data'])
-NB_accuracy = np.mean(NB_predicted == X_test['target'])
-print("the accuracy of Naive Bayes is {}".format(NB_accuracy))
-#print(model_selection_stemmed.best_score_)
-#print(model_selection_stemmed.best_params_)
+
+model_selection_stemmed = GridSearchCV(NB_text_clf, stemmed_parameter, n_jobs = -1)
+model_selection_stemmed = model_selection_stemmed.fit(X_train['data'], X_train['target'])
+#NB_text_clf = NB_text_clf.fit(X_train['data'],X_train['target'])
+#NB_predicted = NB_text_clf.predict(X_test['data'])
+#NB_accuracy = np.mean(NB_predicted == X_test['target'])
+#print("the accuracy of Naive Bayes is {}".format(NB_accuracy))
+print(model_selection_stemmed.best_score_)
+print(model_selection_stemmed.best_params_)
 
