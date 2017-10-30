@@ -21,7 +21,7 @@ def read_dir(path):
         sub_dir = path + '/' + item
         for txt_file in os.listdir(sub_dir):
             count += 1
-            category.append(sub_dir.split('/')[1])
+            category.append(sub_dir.split('/')[2])
             full_file = sub_dir + '/' + txt_file    
             recipe.append(read_txt_file(full_file))
     cols = {'recipe':recipe, 'category':category}
@@ -29,7 +29,7 @@ def read_dir(path):
     #print upmc_food_101_df.head()
     upmc_food_101_df.to_csv('upmc_food_101_df.csv',header=True)
     return count, upmc_food_101_df
-pt = "texts_txt"
+pt = "../texts_txt"
 count, df = read_dir(pt)
 #print(Recipe)
 print("there are total %d samples in text form \n",count) 
