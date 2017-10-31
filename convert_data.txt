@@ -1,0 +1,20 @@
+loading dataset.
+processing train data
+(73908, 395689)
+<class 'scipy.sparse.csr.csr_matrix'>
+processing test data
+(18476, 168111)
+<class 'scipy.sparse.csr.csr_matrix'>
+loading dataset.
+loading dataset.
+processing train data
+(100, 9042)
+<class 'scipy.sparse.csr.csr_matrix'>
+processing test data
+loading dataset.
+processing train data
+(100, 9042)
+<class 'scipy.sparse.csr.csr_matrix'>
+processing test data
+(10, 9042)
+<class 'scipy.sparse.csr.csr_matrix'>

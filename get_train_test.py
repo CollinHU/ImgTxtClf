@@ -2,7 +2,7 @@ import pandas as pd
 
 #path = '../umpc_food_101_df.csv'
 def train_test_data_set():
-    path = '../upmc_food_101_df.csv'
+    path = '../data/upmc_food_101_df.csv'
     data = pd.read_csv(path,index_col = 0)
     
     category_name = data['category'].unique()
@@ -49,23 +49,23 @@ def train_test_data_set():
   #  print(test_df.head())
     category_id = pd.DataFrame(data = categories,index=range(1))
 
-    train_df.to_csv('../train_df.csv')
-    test_df.to_csv('../test_df.csv')
-    category_id.to_csv('../category_id.csv', index = False)
+    train_df.to_csv('../data/train_df.csv')
+    test_df.to_csv('../data/test_df.csv')
+    category_id.to_csv('../data/category_id.csv', index = False)
 
     print('finish test/train data loading\n')
 
 def load_dataset():
     try:
-        test_df = pd.read_csv('../test_df.csv')
-        train_df = pd.read_csv('../train_df.csv')
-        categories = pd.read_csv('../category_id.csv')
+        test_df = pd.read_csv('../data/test_df.csv')
+        train_df = pd.read_csv('../data/train_df.csv')
+        categories = pd.read_csv('../data/category_id.csv')
     except:
         print("Creating train/test data\n")
         train_test_data_set()
-        test_df = pd.read_csv('../test_df.csv')
-        train_df = pd.read_csv('../train_df.csv')
-        categories = pd.read_csv('../category_id.csv')
+        test_df = pd.read_csv('../data/test_df.csv')
+        train_df = pd.read_csv('../data/train_df.csv')
+        categories = pd.read_csv('../data/category_id.csv')
     print('loading dataset.')
     data_dic = {}
     
