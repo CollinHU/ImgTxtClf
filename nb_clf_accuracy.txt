@@ -1,0 +1,2 @@
+using CountVectorizr with stop word mnb with alpha = 1e-3 
+the accuracy is: 0.658692357653

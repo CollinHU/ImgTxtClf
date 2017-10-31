@@ -31,7 +31,7 @@ class StemmedCountVectorizer(CountVectorizer):
 		return lambda doc:([stemmer.stem(w) for w in analyzer(doc)])
 
 #for alpha = 1, ngram = (1,1) use_idf = true accuaracy is 0.69
-
+'''
 NB_text_clf = Pipeline([('vect',CountVectorizer(stop_words = 'english')),
 						('tfidf', TfidfTransformer()),
 						('mnb',MultinomialNB(alpha = 1e-3))])
@@ -41,7 +41,7 @@ NB_predicted = NB_text_clf.predict(X_test['data'])
 NB_accuracy = np.mean(NB_predicted == X_test['target'])
 record = open('nb_clf_accuracy.txt','a')
 record.write('using CountVectorizr with stop word mnb with alpha = 1e-3 \n')
-record.write('the accuracy is: ' + str(NB_accuracy))
+record.write('the accuracy is: ' + str(NB_accuracy)+'\n')
 record.close()
 
 NB_text_clf = Pipeline([('vect',StemmedCountVectorizer(stop_words = 'english')),
@@ -61,7 +61,7 @@ record.write("the socre is: ")
 record.write(str(model_selection_stemmed.best_score_)+'\n')
 record.write('parameters is ' + str(model_selection_stemmed.best_params_)+'\n')
 record.close()
-
+'''
 #print("the accuracy of Naive Bayes is {}".format(NB_accuracy))
 #print(model_selection_stemmed.best_score_)
 #print(model_selection_stemmed.best_params_)
@@ -74,9 +74,9 @@ svm_predicted = svm_text_clf.predict(X_test['data'])
 svm_accuracy = np.mean(svm_predicted == X_test['target'])
 record = open('nb_clf_accuracy.txt','a')
 record,write('using CountVectorizr with stop word svm classifer(default)\n')
-record.write('the accuracy is: ' + str(svm_accuracy))
+record.write('the accuracy is: ' + str(svm_accuracy)+'\n')
 record.close()
-
+'''
 stemmed_parameter = {'vect__ngram_range':[(1,1),(1,2)],
 					'tfidf__use_idf':[True,False],
 					'svm__kernel':['linear', 'poly', 'rbf', 'sigmoid']}
@@ -90,4 +90,4 @@ record.write("the socre is: ")
 record.write(str(model_selection_stemmed.best_score_)+'\n')
 record.write('parameters is ' + str(model_selection_stemmed.best_params_)+'\n')
 record.close()
-
+'''

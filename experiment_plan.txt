@@ -1,0 +1,15 @@
+1.clean data
+1)remove meaningless marks such as |, #, _, ! and extra whitespace
+2) remove stop words
+3) stemming words
+
+2. data processing
+1) using stemmerCountVectrizer()
+2) TidfTransformer()
+3) store the transfered results avoid converting data from scratch for saving time
+
+3. use serial methods
+1) GridSearvchCv() doesn't work with memory problems
+2) try mnb() with default setting
+3) try SVM() with SVC() defaault setting
+4) try mlp classifier
