@@ -21,7 +21,7 @@ class StemmedCountVectorizer(CountVectorizer):
 		return lambda doc:([stemmer.stem(w) for w in analyzer(doc)])
 
 
-StemmedConvert = StemmedCountVectorizer(stop_words = 'english')
+StemmedConvert = StemmedCountVectorizer(stop_words = 'english', ngram_range = (1,2))
 TfidfTran = TfidfTransformer()
 def txt2wordvector(data,mod): 
     if mod == 'train':
@@ -41,12 +41,12 @@ def txt2wordvector(data,mod):
 print('processing train data')
 train_data_converted = txt2wordvector(X_train['data'],'train')
 #store the content
-with open("train_data.pkl", 'wb') as handle:
+with open("train_data_ngram_2.pkl", 'wb') as handle:
                         pickle.dump(train_data_converted, handle)
 
 
 print('processing test data')
 test_data_converted = txt2wordvector(X_test['data'],'test')
 #store the content
-with open("test_data.pkl", 'wb') as t_handle:
+with open("test_data_ngram_2.pkl", 'wb') as t_handle:
                         pickle.dump(test_data_converted, t_handle)
