@@ -1,0 +1,9 @@
+Creating train/test data
+
+there are 73890 samples in train dataset
+
+there are 18472 samples in test dataset
+
+finish test/train data loading
+
+loading dataset.

@@ -13,3 +13,10 @@
 2) try mnb() with default setting
 3) try SVM() with SVC() defaault setting
 4) try mlp classifier
+
+next work and find a proper method for classifier
+4. reduce dimension
+compress the world vector 
+using such as words embedding
+
+combine tfidf and w2v method to process text data

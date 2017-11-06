@@ -1,0 +1,3 @@
+using svm  with setting: 
+kernel = rbf the accuracy is: 0.0106624810565
+

@@ -13,10 +13,6 @@ def train_test_data_set():
     
     data['category_id'] = [categories[item] for item in data['category'].values]
     
-    data['recipe'] = data['recipe'].apply(lambda x: x if type(x) == str else 'remove')
-    data['recipe'] = data['recipe'].apply(lambda x: x if len(x) > 20 else 'r')
-    data = data[data['recipe'] != 'r']
-
     #print(len(data.index))
     
     df_list = {'category':[],'recipe':[],'category_id':[]}
