@@ -1,4 +1,3 @@
-import gensim
 import get_train_test as dataset
 import numpy as np 
 import pandas as pd
@@ -43,12 +42,6 @@ def txt2wordvector(data,mod):
 
 
 print('processing fit_train data')
-fit_data = X_train['data'][0:1] # + X_test['data']
-fit_data = [word_tokenize(s) for s in fit_data]
-fit_data = [[w for w in s if w not in stopwords.words('english')] for s in fit_data]
-stemmed_fit_data = [[stemmer.stem(w) for w in s] for s in fit_data]
-print(fit_data)
-'''
 train_data_converted = txt2wordvector(X_train['data'],'train')
 #store the content
 with open("train_data_ngram_2.pkl", 'wb') as handle:
@@ -61,4 +54,3 @@ test_data_converted = txt2wordvector(X_test['data'],'test')
 with open("test_data_ngram_2.pkl", 'wb') as t_handle:
                         pickle.dump(test_data_converted, t_handle)
 
-'''
