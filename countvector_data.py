@@ -41,16 +41,16 @@ def txt2wordvector(data,mod):
     return data
 
 
-print('processing fit_train data')
+print('processing train data')
 train_data_converted = txt2wordvector(X_train['data'],'train')
 #store the content
-with open("train_data_ngram_2.pkl", 'wb') as handle:
+with open("../data/train_data_ngram_1.pkl", 'wb') as handle:
                         pickle.dump(train_data_converted, handle)
 
 
 print('processing test data')
 test_data_converted = txt2wordvector(X_test['data'],'test')
 #store the content
-with open("test_data_ngram_2.pkl", 'wb') as t_handle:
+with open("../data/test_data_ngram_1.pkl", 'wb') as t_handle:
                         pickle.dump(test_data_converted, t_handle)
 
