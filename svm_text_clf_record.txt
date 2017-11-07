@@ -1,3 +1,5 @@
+without using w2v
 using svm  with setting: 
 kernel = rbf the accuracy is: 0.0106624810565
 
+using w2v

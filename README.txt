@@ -18,5 +18,8 @@ next work and find a proper method for classifier
 4. reduce dimension
 compress the world vector 
 using such as words embedding
-
 combine tfidf and w2v method to process text data
+
+
+read_rawdata.py -> clean_data.py -> get_train_test.py -> construct_dict.py,countvector_data.py ->*clf.py 
+           						 (tow different methods of processing data)

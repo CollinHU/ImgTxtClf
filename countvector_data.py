@@ -24,7 +24,7 @@ class StemmedCountVectorizer(CountVectorizer):
 		return lambda doc:([stemmer.stem(w) for w in analyzer(doc)])
 
 
-StemmedConvert = StemmedCountVectorizer(stop_words = 'english', ngram_range = (1,2))
+StemmedConvert = StemmedCountVectorizer(stop_words = 'english',min_df = 11)
 TfidfTran = TfidfTransformer()
 def txt2wordvector(data,mod): 
     if mod == 'train':

@@ -4,7 +4,8 @@ import pandas as pd
 def train_test_data_set():
     path = '../data/upmc_food_101_df.csv'
     data = pd.read_csv(path,index_col = 0)
-    
+    #data = data.iloc[:10]
+
     category_name = data['category'].unique()
     categories = {}
     size = len(category_name)
@@ -26,7 +27,13 @@ def train_test_data_set():
     data = data[['category','category_id','recipe']]
     test_index = test_df.index.values
     train_df = data.drop(test_index)
-
+    
+   # test_df['stemmed_recipe'] = test_df['recipe'].apply(lambda x: token_sent(x))
+  #  test_df['stemmed_recipe'] = test_df['stemmed_recipe'].apply(lambda x:' '.join(x))
+    
+   # train_df['stemmed_recipe'] = train_df['recipe'].apply(token_sent)
+   # train_df['stemmed_recipe'] = train_df['stemmed_recipe'].apply(lambda x:' '.join(x))
+    
     test_df = test_df.sample(frac = 1)
     train_df = train_df.sample(frac = 1)
 
@@ -71,10 +78,12 @@ def load_dataset():
     
     train = {}
     train['data'] = list(train_df['recipe'].values)
+    #train['stemmed_data'] = list(train_df['stemmed_recipe'].values)
     train['target'] = train_df['category_id'].values
 
     test = {}
     test['data'] = list(test_df['recipe'].values)
+    #test['stemmed_data'] = list(test_df['stemmed_recipe'].values)
     test['target'] = test_df['category_id'].values
 
 
@@ -91,4 +100,5 @@ print(train_df.head())'''
 #print(type(data['category'].values))
 #print data.head(5)
 #print(categories)
+#train_test_data_set()
 #load_dataset()
