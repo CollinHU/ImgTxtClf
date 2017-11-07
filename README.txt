@@ -21,5 +21,5 @@ using such as words embedding
 combine tfidf and w2v method to process text data
 
 
-read_rawdata.py -> clean_data.py -> get_train_test.py -> construct_dict.py,countvector_data.py ->*clf.py 
-           						 (tow different methods of processing data)
+step 1. read_rawdata.py -> step 2. clean_data.py -> 
+step 3. get_train_test.py -> step 4. construct_dict.py,countvector_data.py (tow different methods of processing data) -> step 5. using classifier to do classify (*clf.py)
