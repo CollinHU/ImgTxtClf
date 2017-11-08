@@ -24,4 +24,4 @@ svm() uses results combining tdidf and w2v
 
 whole procedure liek following:
 step 1. read_rawdata.py -> step 2. clean_data.py -> 
-step 3. get_train_test.py -> step 4. construct_dict.py,countvector_data.py (tow different methods of processing data) -> step 5. using classifier to do classify (*clf.py)
+step 3. get_train_test.py -> step 4. construct_dict.py + tfidf_w2v.py ,countvector_data.py (tow different methods of processing data) -> step 5. using classifier to do classify (*clf.py)
