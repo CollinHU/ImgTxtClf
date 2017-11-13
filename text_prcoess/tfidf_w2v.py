@@ -56,11 +56,11 @@ def construct_model():
     w2v = dict(zip(word_vectors.index2word, word_vectors.syn0))
     
     print('load tfidf')
-    with open('../data/tfidf_idf_list.txt','r') as f:
+    with open('../../data/tfidf_idf_list.txt','r') as f:
         lines = f.readlines()
         tfidf_idf = [float(item.split('\n')[0]) for item in lines]
         
-    with open('../data/tfidf_dic.txt', 'r') as f:
+    with open('../../data/tfidf_dic.txt', 'r') as f:
         tfidf_dic  = eval(f.read())
         
     print('construct w2v model')

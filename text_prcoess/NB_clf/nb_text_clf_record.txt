@@ -1,0 +1,35 @@
+n_gram = 1
+
+using multinomial NB with setting: 
+alpha = 1 fit_prior = True 
+the accuracy is: 0.672981164754
+
+using multinomial NB with setting: 
+alpha = 1 fit_prior = False 
+the accuracy is: 0.682994154579
+
+using multinomial NB with setting: 
+alpha = 0.1 fit_prior = True 
+the accuracy is: 0.67249404633
+
+using multinomial NB with setting: 
+alpha = 0.1 fit_prior = False 
+the accuracy is: 0.676282745183
+
+using multinomial NB with setting: 
+alpha = 0.01 fit_prior = True 
+the accuracy is: 0.682994154579
+
+using multinomial NB with setting: 
+alpha = 0.01 fit_prior = False 
+the accuracy is: 0.683102403118
+
+using multinomial NB with setting: 
+alpha = 0.001 fit_prior = True 
+the accuracy is: 0.663888287508
+
+using multinomial NB with setting: 
+alpha = 0.001 fit_prior = False 
+the accuracy is: 0.661885689543
+
+using w2v

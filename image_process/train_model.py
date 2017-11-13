@@ -95,7 +95,14 @@ dset_loaders = {x: torch.utils.data.DataLoader(dsets[x], batch_size=4,
                 for x in ['train', 'val']}
 dset_sizes = {x: len(dsets[x]) for x in ['train', 'val']}
 dset_classes = dsets['train'].classes
+print(dset_classes)
+category = {}
+for i  in range(len(dset_classes)):
+    category[dset_classes[i]] = i
+import json
 
+with open('category_id.txt', 'w') as f:
+        f.write(json.dumps(category))
 use_gpu = torch.cuda.is_available()
 
 ######################################################################
