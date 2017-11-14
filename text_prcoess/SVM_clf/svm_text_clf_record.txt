@@ -27,5 +27,3 @@ using svm  with setting:
 kernel = sigmoid training data the accuracy is: 0.0109353219018
 test data the accuracy is: 0.00974500568459
 
-using common set:
-
