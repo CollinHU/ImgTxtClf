@@ -66,11 +66,9 @@ Y_test_v = Variable(torch.from_numpy(Y_test_v).float(),requires_grad=False)
 #print Y_train.shape
 #print Y_train[0,:]
 
-batch_size,D_in,H_one,H,D_out = 1000,200,500,200,101
+batch_size,D_in,H,D_out = 1000,200,500,101
 model = torch.nn.Sequential(
-    torch.nn.Linear(D_in, H_one),
-    torch.nn.Linear(H_one,H),
-    torch.nn.ReLU(),
+    torch.nn.Linear(D_in, H),
     torch.nn.Linear(H, D_out),
     torch.nn.Softmax()
 )
