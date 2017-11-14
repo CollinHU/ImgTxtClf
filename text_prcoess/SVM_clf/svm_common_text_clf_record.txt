@@ -1,0 +1,4 @@
+using svm  with setting: 
+kernel = linear training data the accuracy is: 0.961680156676
+test data the accuracy is: 0.77251552795
+

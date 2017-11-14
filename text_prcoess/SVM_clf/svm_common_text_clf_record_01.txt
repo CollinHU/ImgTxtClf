@@ -1,0 +1,4 @@
+using svm  with setting: 
+kernel = rbf training data the accuracy is: 0.805702781544
+test data the accuracy is: 0.642080745342
+

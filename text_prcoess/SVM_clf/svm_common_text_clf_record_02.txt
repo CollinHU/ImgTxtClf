@@ -1,0 +1,4 @@
+using svm  with setting: 
+kernel = sigmoid training data the accuracy is: 0.012257419505
+test data the accuracy is: 0.0129658385093
+
