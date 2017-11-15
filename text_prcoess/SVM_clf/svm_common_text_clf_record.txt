@@ -2,3 +2,10 @@ using svm  with setting:
 kernel = linear training data the accuracy is: 0.961680156676
 test data the accuracy is: 0.77251552795
 
+using svm  with setting: 
+kernel = rbf training data the accuracy is: 0.805702781544
+test data the accuracy is: 0.642080745342
+
+using svm  with setting: 
+kernel = sigmoid training data the accuracy is: 0.012257419505
+test data the accuracy is: 0.0129658385093

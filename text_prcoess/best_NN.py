@@ -12,6 +12,10 @@ import pandas as pd
 import numpy as np
 import gc
 
+from sklearn.preprocessing import StandardScaler
+# Train data preprocessing
+
+standar_tran = StandardScaler()
 # Train data preprocessing
 
 print('reading data')
@@ -82,7 +86,7 @@ learning_rate = 1e-3
 optimizer = torch.optim.Adam(model.parameters(), lr=learning_rate)
 
 itr_num = int(train_size / batch_size) + 1
-for t in range(800):
+for t in range(1500):
     # Forward pass: compute predicted y by passing x to the model.
     total_loss = 0
     acc = 0
@@ -130,7 +134,7 @@ for t in range(800):
         learning_rate = 1e-4
         optimizer = torch.optim.Adam(model.parameters(), lr=learning_rate)
     if t >= 350 and t % 350 == 0:
-        learning_rate = 1e-4
+        learning_rate /= 2
         optimizer = torch.optim.Adam(model.parameters(), lr=learning_rate)
 
 itr_num = int(test_size / batch_size) + 1

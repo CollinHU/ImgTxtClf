@@ -12,6 +12,10 @@ import pandas as pd
 import numpy as np
 import gc
 
+from sklearn.preprocessing import StandardScaler
+# Train data preprocessing
+
+standar_tran = StandardScaler()
 # Train data preprocessing
 
 print('reading data')
@@ -33,12 +37,17 @@ Y_train = np.append(Y_train,Y_val, axis = 0)
 
 Y_test = X_test['category_id'].values
 
-X_train_data = X_train_data
+#X_train_data = X_train_data
 print(X_train_data.shape)
-Y_train = Y_train
+#Y_train = Y_train
 
-X_test_data = X_test_data
-Y_test = Y_test
+#X_test_data = X_test_data
+#Y_test = Y_test
+X_tr_tst = np.append(X_train_data,X_test_data,axis = 0)
+standar_tran = standar_tran.fit(X_tr_tst)
+
+X_train_data = standar_tran.transform(X_train_data)
+X_test_data = standar_tran.transform(X_test_data)
 
 train_size = len(Y_train)
 test_size = len(Y_test)
@@ -69,7 +78,6 @@ Y_test_v = Variable(torch.from_numpy(Y_test_v).float(),requires_grad=False)
 batch_size,D_in,H,D_out = 1000,200,500,101
 model = torch.nn.Sequential(
     torch.nn.Linear(D_in, H),
-    torch.nn.ReLU(),
     torch.nn.Linear(H, D_out),
     torch.nn.Softmax()
 )
@@ -83,7 +91,7 @@ learning_rate = 1e-3
 optimizer = torch.optim.Adam(model.parameters(), lr=learning_rate)
 
 itr_num = int(train_size / batch_size) + 1
-for t in range(800):
+for t in range(1000):
     # Forward pass: compute predicted y by passing x to the model.
     total_loss = 0
     acc = 0
