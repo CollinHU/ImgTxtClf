@@ -1,38 +1,3 @@
-# -*- coding: utf-8 -*-
-"""
-Transfer Learning tutorial
-==========================
-**Author**: `Sasank Chilamkurthy <https://chsasank.github.io>`_
-
-In this tutorial, you will learn how to train your network using
-transfer learning. You can read more about the transfer learning at `cs231n
-notes <http://cs231n.github.io/transfer-learning/>`__
-
-Quoting this notes,
-
-    In practice, very few people train an entire Convolutional Network
-    from scratch (with random initialization), because it is relatively
-    rare to have a dataset of sufficient size. Instead, it is common to
-    pretrain a ConvNet on a very large dataset (e.g. ImageNet, which
-    contains 1.2 million images with 1000 categories), and then use the
-    ConvNet either as an initialization or a fixed feature extractor for
-    the task of interest.
-
-These two major transfer learning scenarios looks as follows:
-
--  **Finetuning the convnet**: Instead of random initializaion, we
-   initialize the network with a pretrained network, like the one that is
-   trained on imagenet 1000 dataset. Rest of the training looks as
-   usual.
--  **ConvNet as fixed feature extractor**: Here, we will freeze the weights
-   for all of the network except that of the final fully connected
-   layer. This last fully connected layer is replaced with a new one
-   with random weights and only this layer is trained.
-
-"""
-# License: BSD
-# Author: Sasank Chilamkurthy
-
 from __future__ import print_function, division
 
 import torch
@@ -47,31 +12,15 @@ import time
 import copy
 import os
 
-plt.ion()   # interactive mode
 
-######################################################################
-# Load Data
-# ---------
-#
-# We will use torchvision and torch.utils.data packages for loading the
-# data.
-#
-# The problem we're going to solve today is to train a model to classify
-# **ants** and **bees**. We have about 120 training images each for ants and bees.
-# There are 75 validation images for each class. Usually, this is a very
-# small dataset to generalize upon, if trained from scratch. Since we
-# are using transfer learning, we should be able to generalize reasonably
-# well.
-#
-# This dataset is a very small subset of imagenet.
-# 
-# .. Note ::
-#    Download the data from
-#    `here <https://download.pytorch.org/tutorial/hymenoptera_data.zip>`_
-#    and extract it to the current directory.
+def load_model(filename, model,optimizer):
+    checkpoint = torch.load(filename)
+    epoch = checkpoint['epoch']
+    best_prec = checkpoint['best_prec1']
+    model.load_state_dict(checkpoint['state_dict'])
+    optimizer.load_state_dict(checkpoint['optimizer'])
+    return model, optimizer,best_prec
 
-# Data augmentation and normalization for training 
-# Just normalization for validation
 data_transforms = {
     'train': transforms.Compose([
         transforms.RandomSizedCrop(224),
@@ -85,15 +34,21 @@ data_transforms = {
         transforms.ToTensor(),
         transforms.Normalize([0.485, 0.456, 0.406], [0.229, 0.224, 0.225])
     ]),
+    'test': transforms.Compose([
+        transforms.Scale(256),
+        transforms.CenterCrop(224),
+        transforms.ToTensor(),
+        transforms.Normalize([0.485, 0.456, 0.406], [0.229, 0.224, 0.225])
+    ]),
 }
 
-data_dir = '../../common/images'
+data_dir = '/mnt/zyhu/common/images'
 dsets = {x: datasets.ImageFolder(os.path.join(data_dir, x), data_transforms[x])
-         for x in ['train', 'val']}
+         for x in ['train', 'val','test']}
 dset_loaders = {x: torch.utils.data.DataLoader(dsets[x], batch_size=4,
                                                shuffle=True, num_workers=4)
-                for x in ['train', 'val']}
-dset_sizes = {x: len(dsets[x]) for x in ['train', 'val']}
+                for x in ['train', 'val','test']}
+dset_sizes = {x: len(dsets[x]) for x in ['train', 'val','test']}
 dset_classes = dsets['train'].classes
 print(dset_classes)
 category = {}
@@ -123,35 +78,11 @@ def imshow(inp, title=None):
     plt.pause(0.001)  # pause a bit so that plots are updated
 """
 
-# Get a batch of training data
-#inputs, classes = next(iter(dset_loaders['train']))
-
-# Make a grid from batch
-#out = torchvision.utils.make_grid(inputs)
-
-#imshow(out, title=[dset_classes[x] for x in classes])
-
-
-######################################################################
-# Training the model
-# ------------------
-#
-# Now, let's write a general function to train a model. Here, we will
-# illustrate:
-#
-# -  Scheduling the learning rate
-# -  Saving (deep copying) the best model
-#
-# In the following, parameter ``lr_scheduler(optimizer, epoch)``
-# is a function  which modifies ``optimizer`` so that the learning
-# rate is changed according to desired schedule.
-
-def train_model(model, criterion, optimizer, lr_scheduler, num_epochs=25):
+def train_model(model, criterion, optimizer, lr_scheduler, num_epochs=25,model_acc = 0.0):
     since = time.time()
 
     best_model = model
-    best_acc = 0.0
-
+    best_acc = model_acc
     for epoch in range(num_epochs):
         print('Epoch {}/{}'.format(epoch, num_epochs - 1))
         print('-' * 10)
@@ -273,6 +204,42 @@ def visualize_model(model, num_images=6):
                 return
 
 ######################################################################
+
+def test_model(model, criterion):
+    since = time.time()
+        # Each epoch has a training and validation phase
+    model.train(False)  # Set model to evaluate mode
+
+    running_loss = 0.0
+    running_corrects = 0
+
+            # Iterate over data.
+    for data in dset_loaders[phase]:
+        inputs, labels = data
+                # wrap them in Variable
+    if use_gpu:
+        inputs, labels = Variable(inputs.cuda()), \
+                Variable(labels.cuda())
+    else:
+        inputs, labels = Variable(inputs), Variable(labels)
+
+    outputs = model(inputs)
+    _, preds = torch.max(outputs.data, 1)
+    loss = criterion(outputs, labels)
+
+        # backward + optimize only if in training phase
+    running_loss += loss.data[0]
+    running_corrects += torch.sum(preds == labels.data)
+
+    epoch_loss = running_loss / dset_sizes[phase]
+    epoch_acc = running_corrects / dset_sizes[phase]
+
+    print('{} Loss: {:.4f} Acc: {:.4f}'.format(phase, epoch_loss, epoch_acc))
+
+
+    time_elapsed = time.time() - since
+    print('Testing complete in {:.0f}m {:.0f}s'.format(
+        time_elapsed // 60, time_elapsed % 60))
 # Finetuning the convnet
 # ----------------------
 #
@@ -294,35 +261,21 @@ criterion = nn.CrossEntropyLoss()
 # Observe that all parameters are being optimized
 optimizer_ft = optim.SGD(model_ft.fc.parameters(), lr=0.001, momentum=0.9)
 
-######################################################################
-# Train and evaluate
-# ^^^^^^^^^^^^^^^^^^
-#
-# It should take around 15-25 min on CPU. On GPU though, it takes less than a
-# minute.
-#
-model_ft = train_model(model_ft, criterion, optimizer_ft, exp_lr_scheduler, num_epochs=15)
+model_ft = models.resnet50(pretrained=True)
+for param in model_ft.parameters():
+    param.requires_grad = False
+
+num_ftrs = model_ft.fc.in_features
+model_ft.fc = nn.Linear(num_ftrs, 101)
+model_ft,optimizer_ft,m_acc = load_model('checkpoint.pth.tar',model_ft, optimizer_ft)
+
+
+model_ft = train_model(model_ft, criterion, optimizer_ft, exp_lr_scheduler, num_epochs=20,model_acc = m_acc)
+test_model(model_ft, criterion)
 
 for param in model_ft.parameters():
     param.requires_grad = True
 
+model_ft = train_model(model_ft, criterion, optimizer_ft, exp_lr_scheduler, num_epochs=5,model_acc = m_acc)
 
-optimizer_ft = optim.SGD(model_ft.parameters(), lr=0.001, momentum=0.9)
-model_ft = train_model(model_ft, criterion, optimizer_ft, exp_lr_scheduler, num_epochs=15)
-######################################################################
-#
-
-#visualize_model(model_ft)
-
-
-######################################################################
-# ConvNet as fixed feature extractor
-# ----------------------------------
-#
-# Here, we need to freeze all the network except the final layer. We need
-# to set ``requires_grad == False`` to freeze the parameters so that the
-# gradients are not computed in ``backward()``.
-#
-# You can read more about this in the documentation
-# `here <http://pytorch.org/docs/notes/autograd.html#excluding-subgraphs-from-backward>`__.
-#
+test_model(model_ft, criterion)
