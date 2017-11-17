@@ -42,7 +42,7 @@ data_transforms = {
     ]),
 }
 
-data_dir = '/mnt/zyhu/common/images'
+data_dir = '/run/shm/common/images'
 dsets = {x: datasets.ImageFolder(os.path.join(data_dir, x), data_transforms[x])
          for x in ['train', 'val','test']}
 dset_loaders = {x: torch.utils.data.DataLoader(dsets[x], batch_size=4,
@@ -59,7 +59,7 @@ import json
 with open('category_id.txt', 'w') as f:
         f.write(json.dumps(category))
 use_gpu = torch.cuda.is_available()
-
+print(use_gpu)
 ######################################################################
 # Visualize a few images
 # ^^^^^^^^^^^^^^^^^^^^^^
@@ -105,8 +105,7 @@ def train_model(model, criterion, optimizer, lr_scheduler, num_epochs=25,model_a
 
                 # wrap them in Variable
                 if use_gpu:
-                    inputs, labels = Variable(inputs.cuda()), \
-                        Variable(labels.cuda())
+                    inputs, labels = Variable(inputs.cuda()), Variable(labels.cuda())
                 else:
                     inputs, labels = Variable(inputs), Variable(labels)
 
@@ -253,8 +252,7 @@ for param in model_ft.parameters():
 num_ftrs = model_ft.fc.in_features
 model_ft.fc = nn.Linear(num_ftrs, 101)
 
-if use_gpu:
-    model_ft = model_ft.cuda()
+
 
 criterion = nn.CrossEntropyLoss()
 
@@ -269,6 +267,8 @@ num_ftrs = model_ft.fc.in_features
 model_ft.fc = nn.Linear(num_ftrs, 101)
 model_ft,optimizer_ft,m_acc = load_model('checkpoint.pth.tar',model_ft, optimizer_ft)
 
+if use_gpu:
+    model_ft = model_ft.cuda()
 
 model_ft = train_model(model_ft, criterion, optimizer_ft, exp_lr_scheduler, num_epochs=20,model_acc = m_acc)
 test_model(model_ft, criterion)
