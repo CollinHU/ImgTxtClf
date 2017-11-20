@@ -22,16 +22,16 @@ standar_tran = StandardScaler()
 # Train data preprocessing
 
 print('reading data')
-X_train = pd.read_csv('/mnt/zyhu/common/texts/train_tfidf_w2v_df.csv',index_col = 0)
+X_train = pd.read_csv('/Users/collin/myDocuments/BDT5001_data/common/texts/train_tfidf_w2v_df.csv',index_col = 0)
 X_train_data = X_train.iloc[:,:200].values
 #X_test_data = pickle.load(open('../data/test_data_ngram_1.pkl','rb'))
 
-X_val = pd.read_csv('/mnt/zyhu/common/texts/val_tfidf_w2v_df.csv',index_col = 0)
+X_val = pd.read_csv('/Users/collin/myDocuments/BDT5001_data/common/texts/val_tfidf_w2v_df.csv',index_col = 0)
 X_val_data = X_val.iloc[:,:200].values
 
 #X_train_data = np.append(X_train_data, X_val_data, axis = 0)
 
-X_test = pd.read_csv('/mnt/zyhu/common/texts/test_tfidf_w2v_df.csv',index_col = 0)
+X_test = pd.read_csv('/Users/collin/myDocuments/BDT5001_data/common/texts/test_tfidf_w2v_df.csv',index_col = 0)
 X_test_data = X_test.iloc[:,:200].values
 
 Y_train = X_train['category_id'].values
@@ -119,7 +119,7 @@ for t in range(1000):
         
         x = X_train_data[start_p:end_p, :]
         y = Y_train_v[start_p:end_p, :]
-        y_target = Y_train[start_p:end_p]
+        y_target = Y_train[start_p:end_p].reshape(-1,1)
         
         y_pred = model(x)
 
@@ -170,7 +170,7 @@ for t in range(1000):
         
         x = X_val_data[start_p:end_p, :]
         y = Y_val_v[start_p:end_p, :]
-        y_target = Y_val[start_p:end_p]
+        y_target = Y_val[start_p:end_p].reshape(-1,1)
         
         y_pred = model(x)
 
@@ -184,7 +184,7 @@ for t in range(1000):
     print('val', val_loss/val_size)
     print(float(val_acc)/val_size)
     if best_acc < val_acc:
-        best_acc = val_acc
+        best_acc = val_acc/val_size
         best_model = copy.deepcopy(model)
         save_checkpoint({'epoch': t+1,
         'state_dict': best_model.state_dict(),
@@ -208,7 +208,7 @@ for i in range(itr_num):
         
     x = X_test_data[start_p:end_p, :]
     y = Y_test_v[start_p:end_p, :]
-    y_target = Y_test[start_p:end_p]
+    y_target = Y_test[start_p:end_p].reshape(-1,1)
         
     y_pred = model(x)
 
