@@ -92,3 +92,99 @@ val Loss: 0.1372 Acc: 0.4832
 
 Epoch 13/19
 ----------
+train Loss: 0.1276 Acc: 0.5167
+val Loss: 0.1376 Acc: 0.4832
+
+Epoch 14/19
+----------
+LR is set to 1e-05
+train Loss: 0.1270 Acc: 0.5181
+val Loss: 0.1366 Acc: 0.4880
+
+Epoch 15/19
+----------
+train Loss: 0.1271 Acc: 0.5165
+val Loss: 0.1374 Acc: 0.4800
+
+Epoch 16/19
+----------
+train Loss: 0.1272 Acc: 0.5183
+val Loss: 0.1370 Acc: 0.4863
+
+Epoch 17/19
+----------
+train Loss: 0.1267 Acc: 0.5192
+val Loss: 0.1363 Acc: 0.4889
+
+Epoch 18/19
+----------
+train Loss: 0.1269 Acc: 0.5169
+val Loss: 0.1371 Acc: 0.4822
+
+Epoch 19/19
+----------
+train Loss: 0.1271 Acc: 0.5160
+val Loss: 0.1360 Acc: 0.4892
+
+Training complete in 300m 53s
+Best val Acc: 0.489245
+13023
+test Loss: 0.1374 Acc: 0.4873
+Testing complete in 2m 35s
+Epoch 0/9
+----------
+LR is set to 0.001
+train Loss: 0.1270 Acc: 0.5175
+val Loss: 0.1370 Acc: 0.4849
+
+Epoch 1/9
+----------
+train Loss: 0.1266 Acc: 0.5200
+val Loss: 0.1373 Acc: 0.4835
+
+Epoch 2/9
+----------
+train Loss: 0.1271 Acc: 0.5183
+val Loss: 0.1371 Acc: 0.4829
+
+Epoch 3/9
+----------
+train Loss: 0.1269 Acc: 0.5175
+val Loss: 0.1369 Acc: 0.4829
+
+Epoch 4/9
+----------
+train Loss: 0.1268 Acc: 0.5177
+val Loss: 0.1374 Acc: 0.4846
+
+Epoch 5/9
+----------
+train Loss: 0.1269 Acc: 0.5181
+val Loss: 0.1362 Acc: 0.4906
+
+Epoch 6/9
+----------
+train Loss: 0.1267 Acc: 0.5210
+val Loss: 0.1376 Acc: 0.4832
+
+Epoch 7/9
+----------
+LR is set to 0.0001
+train Loss: 0.1271 Acc: 0.5168
+val Loss: 0.1373 Acc: 0.4854
+
+Epoch 8/9
+----------
+train Loss: 0.1271 Acc: 0.5173
+val Loss: 0.1366 Acc: 0.4875
+
+Epoch 9/9
+----------
+train Loss: 0.1268 Acc: 0.5167
+val Loss: 0.1363 Acc: 0.4912
+
+Training complete in 333m 31s
+Best val Acc: 0.491173
+13023
+test Loss: 0.1376 Acc: 0.4902
+Testing complete in 2m 35s
