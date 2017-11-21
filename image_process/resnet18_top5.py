@@ -7,14 +7,13 @@ from torch.autograd import Variable
 import numpy as np
 import torchvision
 from torchvision import datasets, models, transforms
-import matplotlib.pyplot as plt
 import time
 import copy
 import os
 
 
 def load_model(filename, model):
-    checkpoint = torch.load(filename, map_location=lambda storage, loc: storage)
+    checkpoint = torch.load(filename)#, map_location=lambda storage, loc: storage)
     epoch = checkpoint['epoch']
     best_prec = checkpoint['best_prec1']
     model.load_state_dict(checkpoint['state_dict'])
@@ -41,10 +40,10 @@ data_transforms = {
     ]),
 }
 
-data_dir = '/Users/collin/myDocuments/BDT5001_data/common/images'
+data_dir = '/run/shm/common/images'
 dsets = {x: datasets.ImageFolder(os.path.join(data_dir, x), data_transforms[x])
          for x in ['train', 'val','test']}
-dset_loaders = {x: torch.utils.data.DataLoader(dsets[x], batch_size=16,
+dset_loaders = {x: torch.utils.data.DataLoader(dsets[x], batch_size=64,
                                                shuffle=True, num_workers=4)
                 for x in ['train', 'val','test']}
 dset_sizes = {x: len(dsets[x]) for x in ['train', 'val','test']}
@@ -85,7 +84,7 @@ def exp_lr_scheduler(optimizer, epoch, init_lr=0.001, lr_decay_epoch=7):
 # Generic function to display predictions for a few images
 #
 
-def save_checkpoint(state, filename='resnet34_checkpoint.pth.tar'):
+def save_checkpoint(state, filename='resnet18_checkpoint.pth.tar'):
     torch.save(state, filename)
 
 def visualize_model(model, num_images=6):
@@ -151,7 +150,7 @@ def test_model(model, criterion, phase):
 
 
     time_elapsed = time.time() - since
-    print('Testing complete in {:.0f}m {:.0f}s'.format(time_elapsed // 60, time_elapsed % 60))
+    print('{} complete in {:.0f}m {:.0f}s'.format(phase, time_elapsed // 60, time_elapsed % 60))
 # Finetuning the convnet
 # ----------------------
 #
@@ -174,4 +173,6 @@ m_acc = 0.0
 
 model_ft,m_acc = load_model('resnet18_checkpoint.pth.tar',model_ft)
 print(m_acc)
-test_model(model_ft, criterion, 'test')
+dir_list = ['test', 'val', 'train']
+for item in dir_list:
+	test_model(model_ft, criterion, phase)

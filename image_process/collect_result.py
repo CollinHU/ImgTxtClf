@@ -56,18 +56,20 @@ def test_model(data_folder,model):
                 else:
                     inputs = Variable(inputs)
                 outputs = model(inputs)
-                _, preds = torch.max(outputs.data, 1)
+                _, preds = torch.topk(outputs.data,5, 1)
                 img_name.append(img.split('.')[0])
-                img_pred.append(preds.cpu().numpy()[0])
+                img_pred += list(preds.cpu().numpy())#.append(preds.cpu().numpy()[0])
                 count += 1
+		if count == 10:
+			break
             except:
                 continue
     
     dict_pred = {'img':img_name, 'pred':img_pred}
     df = pd.DataFrame(data = dict_pred)
-    df.to_csv('{}_pred.csv'.format(data_folder))
+    df.to_csv('img_{}_pred.csv'.format(data_folder))
     time_elapsed = time.time() - since
-    print('Testing complete in {:.0f}m {:.0f}s'.format(time_elapsed // 60, time_elapsed % 60))
+    print('{} complete in {:.0f}m {:.0f}s'.format(data_folder, time_elapsed // 60, time_elapsed % 60))
 # Finetuning the convnet
 # ----------------------
 #
