@@ -3,3 +3,8 @@ True
 Testing complete in 25m 23s
 Testing complete in 5m 26s
 Testing complete in 5m 25s
+True
+0.491172615835
+train complete in 25m 35s
+test complete in 5m 30s
+val complete in 5m 28s

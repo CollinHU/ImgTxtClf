@@ -60,8 +60,6 @@ def test_model(data_folder,model):
                 img_name.append(img.split('.')[0])
                 img_pred += list(preds.cpu().numpy())#.append(preds.cpu().numpy()[0])
                 count += 1
-		if count == 10:
-			break
             except:
                 continue
     
