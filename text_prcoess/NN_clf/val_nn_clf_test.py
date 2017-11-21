@@ -69,6 +69,7 @@ X_test_data = standar_tran.transform(X_test_data)
 X_train_data = Variable(torch.from_numpy(X_train_data).float())
 X_val_data = Variable(torch.from_numpy(X_val_data).float())
 X_test_data = Variable(torch.from_numpy(X_test_data).float())
+
 Y_train_v = Variable(torch.from_numpy(Y_train_v).float(), requires_grad=False)
 Y_val_v = Variable(torch.from_numpy(Y_val_v).float(), requires_grad=False)
 Y_test_v = Variable(torch.from_numpy(Y_test_v).float(),requires_grad=False)
@@ -108,17 +109,21 @@ def get_prediction(model, X_data, labels, labels_v, data_size, df):
 
         loss = loss_fn(y_pred, y)
         total_loss += loss.data[0]
-        _,index = torch.max(y_pred,1)
+        _,index = torch.topk(y_pred,5,1)
         if i == 0:
-            pred_result = index.data.numpy()
+            pred_result = list(index.data.numpy())
+            #print(pred_result)
         else:
-            pred_result = np.append(pred_result,index.data.numpy(),axis = 0)
+            pred_result += list(index.data.numpy())
         #print(index.data.numpy().shape)
-        acc += np.sum(index.data.numpy() == y_target)
+        for i in range(5):
+            #print(index.data.numpy()[:,i].shape)
+            acc += np.sum(index.data.numpy()[:,i].reshape(-1,1) == y_target)
 
     print('test',total_loss/data_size)
     print(float(acc)/data_size)
     df['pred_label'] = pred_result
+    df = df[['text_name','category_id','pred_label']]
     df.to_csv('tmp.csv')
 
 
@@ -129,4 +134,4 @@ epoch_acc = checkpoint['best_prec1']
 print(epoch_acc)
 model.load_state_dict(checkpoint['state_dict'])
 
-get_prediction(model, X_train_data, Y_train, Y_train_v, train_size, X_train)
+get_prediction(model, X_val_data, Y_val, Y_val_v, val_size, X_val)
