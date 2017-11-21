@@ -157,7 +157,7 @@ def test_model(model, criterion, phase):
 # Load a pretrained model and reset final fully connected layer.
 #
 
-model_ft = models.resnet34(pretrained=False)
+model_ft = models.resnet18(pretrained=False)
 for param in model_ft.parameters():
     param.requires_grad = False
 
@@ -175,4 +175,4 @@ model_ft,m_acc = load_model('resnet18_checkpoint.pth.tar',model_ft)
 print(m_acc)
 dir_list = ['test', 'val', 'train']
 for item in dir_list:
-	test_model(model_ft, criterion, phase)
+	test_model(model_ft, criterion, item)
