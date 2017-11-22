@@ -268,6 +268,7 @@ test_model(model_ft, criterion)
 for param in model_ft.parameters():
     param.requires_grad = True
 
+optimizer_ft = optim.SGD(model_ft.parameters(), lr=0.001, momentum=0.9)
 model_ft = train_model(model_ft, criterion, optimizer_ft, exp_lr_scheduler, num_epochs= 10,model_acc = m_acc)
 
 test_model(model_ft, criterion)
