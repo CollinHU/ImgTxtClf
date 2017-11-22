@@ -175,7 +175,7 @@ def exp_lr_scheduler(optimizer, epoch, init_lr=0.001, lr_decay_epoch=7):
 # Generic function to display predictions for a few images
 #
 
-def save_checkpoint(state, filename='resnet34_checkpoint.pth.tar'):
+def save_checkpoint(state, filename='vgg16_checkpoint.pth.tar'):
     torch.save(state, filename)
 
 def visualize_model(model, num_images=6):
@@ -244,17 +244,17 @@ def test_model(model, criterion):
 # Load a pretrained model and reset final fully connected layer.
 #
 
-model_ft = models.resnet34(pretrained=True)
+model_ft = models.vgg16(pretrained=True)
 for param in model_ft.parameters():
     param.requires_grad = False
 
-num_ftrs = model_ft.fc.in_features
-model_ft.fc = nn.Linear(num_ftrs, 101)
+model_ft.classifier._modules['6'] = nn.Linear(4096, 101)
 
 criterion = nn.CrossEntropyLoss()
 
 # Observe that all parameters are being optimized
-optimizer_ft = optim.SGD(model_ft.fc.parameters(), lr=0.001, momentum=0.9)
+optimizer_ft = optim.SGD(model_ft.classifier._modules['6'].parameters(), lr=0.001, momentum=0.9)
+
 
 if use_gpu:
     model_ft = model_ft.cuda()
