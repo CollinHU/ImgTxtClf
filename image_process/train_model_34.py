@@ -259,7 +259,7 @@ optimizer_ft = optim.SGD(model_ft.fc.parameters(), lr=0.001, momentum=0.9)
 if use_gpu:
     model_ft = model_ft.cuda()
 m_acc = 0.0
-#model_ft,optimizer_ft,m_acc = load_model('resnet34_checkpoint.pth.tar',model_ft, optimizer_ft)
+model_ft,optimizer_ft,m_acc = load_model('resnet34_checkpoint.pth.tar',model_ft, optimizer_ft)
 
 test_model(model_ft, criterion)
 model_ft = train_model(model_ft, criterion, optimizer_ft, exp_lr_scheduler, num_epochs=20,model_acc = m_acc)

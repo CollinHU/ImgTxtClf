@@ -13,13 +13,12 @@ import copy
 import os
 
 
-def load_model(filename, model,optimizer):
+def load_model(filename, model):
     checkpoint = torch.load(filename)
     epoch = checkpoint['epoch']
     best_prec = checkpoint['best_prec1']
     model.load_state_dict(checkpoint['state_dict'])
-    optimizer.load_state_dict(checkpoint['optimizer'])
-    return model, optimizer,best_prec
+    return model, best_prec
 
 data_transforms = {
     'train': transforms.Compose([
@@ -259,16 +258,16 @@ optimizer_ft = optim.SGD(model_ft.classifier._modules['6'].parameters(), lr=0.00
 if use_gpu:
     model_ft = model_ft.cuda()
 m_acc = 0.0
-#model_ft,optimizer_ft,m_acc = load_model('resnet34_checkpoint.pth.tar',model_ft, optimizer_ft)
+model_ft,m_acc = load_model('vgg16_checkpoint.pth.tar',model_ft)
 
-test_model(model_ft, criterion)
-model_ft = train_model(model_ft, criterion, optimizer_ft, exp_lr_scheduler, num_epochs=20,model_acc = m_acc)
-test_model(model_ft, criterion)
+#test_model(model_ft, criterion)
+#model_ft = train_model(model_ft, criterion, optimizer_ft, exp_lr_scheduler, num_epochs=10,model_acc = m_acc)
+#test_model(model_ft, criterion)
 
 for param in model_ft.parameters():
     param.requires_grad = True
 
 optimizer_ft = optim.SGD(model_ft.parameters(), lr=0.001, momentum=0.9)
-model_ft = train_model(model_ft, criterion, optimizer_ft, exp_lr_scheduler, num_epochs= 10,model_acc = m_acc)
+model_ft = train_model(model_ft, criterion, optimizer_ft, exp_lr_scheduler, num_epochs= 15,model_acc = m_acc)
 
 test_model(model_ft, criterion)
