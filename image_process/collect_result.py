@@ -74,7 +74,7 @@ def test_model(data_folder,model):
 # Load a pretrained model and reset final fully connected layer.
 #
 
-model_ft = models.resnet34(pretrained=True)
+model_ft = models.resnet152(pretrained=True)
 for param in model_ft.parameters():
     param.requires_grad = False
 
@@ -84,7 +84,7 @@ model_ft.fc = nn.Linear(num_ftrs, 101)
 if use_gpu:
     model_ft = model_ft.cuda()
 m_acc = 0.0
-model_ft, m_acc = load_model('resnet34_checkpoint.pth.tar',model_ft)
+model_ft, m_acc = load_model('resnet152_checkpoint.pth.tar',model_ft)
 print(m_acc)
 model_ft.train(False)
 fold_list = ['train', 'test', 'val']

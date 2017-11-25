@@ -8,3 +8,8 @@ True
 train complete in 25m 35s
 test complete in 5m 30s
 val complete in 5m 28s
+True
+0.661321409298
+train complete in 132m 49s
+test complete in 32m 20s
+val complete in 31m 59s
