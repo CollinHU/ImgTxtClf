@@ -1,0 +1,192 @@
+['apple_pie', 'baby_back_ribs', 'baklava', 'beef_carpaccio', 'beef_tartare', 'beet_salad', 'beignets', 'bibimbap', 'bread_pudding', 'breakfast_burrito', 'bruschetta', 'caesar_salad', 'cannoli', 'caprese_salad', 'carrot_cake', 'ceviche', 'cheese_plate', 'cheesecake', 'chicken_curry', 'chicken_quesadilla', 'chicken_wings', 'chocolate_cake', 'chocolate_mousse', 'churros', 'clam_chowder', 'club_sandwich', 'crab_cakes', 'creme_brulee', 'croque_madame', 'cup_cakes', 'deviled_eggs', 'donuts', 'dumplings', 'edamame', 'eggs_benedict', 'escargots', 'falafel', 'filet_mignon', 'fish_and_chips', 'foie_gras', 'french_fries', 'french_onion_soup', 'french_toast', 'fried_calamari', 'fried_rice', 'frozen_yogurt', 'garlic_bread', 'gnocchi', 'greek_salad', 'grilled_cheese_sandwich', 'grilled_salmon', 'guacamole', 'gyoza', 'hamburger', 'hot_and_sour_soup', 'hot_dog', 'huevos_rancheros', 'hummus', 'ice_cream', 'lasagna', 'lobster_bisque', 'lobster_roll_sandwich', 'macaroni_and_cheese', 'macarons', 'miso_soup', 'mussels', 'nachos', 'omelette', 'onion_rings', 'oysters', 'pad_thai', 'paella', 'pancakes', 'panna_cotta', 'peking_duck', 'pho', 'pizza', 'pork_chop', 'poutine', 'prime_rib', 'pulled_pork_sandwich', 'ramen', 'ravioli', 'red_velvet_cake', 'risotto', 'samosa', 'sashimi', 'scallops', 'seaweed_salad', 'shrimp_and_grits', 'spaghetti_bolognese', 'spaghetti_carbonara', 'spring_rolls', 'steak', 'strawberry_shortcake', 'sushi', 'tacos', 'takoyaki', 'tiramisu', 'tuna_tartare', 'waffles']
+True
+['apple_pie', 'baby_back_ribs', 'baklava', 'beef_carpaccio', 'beef_tartare', 'beet_salad', 'beignets', 'bibimbap', 'bread_pudding', 'breakfast_burrito', 'bruschetta', 'caesar_salad', 'cannoli', 'caprese_salad', 'carrot_cake', 'ceviche', 'cheese_plate', 'cheesecake', 'chicken_curry', 'chicken_quesadilla', 'chicken_wings', 'chocolate_cake', 'chocolate_mousse', 'churros', 'clam_chowder', 'club_sandwich', 'crab_cakes', 'creme_brulee', 'croque_madame', 'cup_cakes', 'deviled_eggs', 'donuts', 'dumplings', 'edamame', 'eggs_benedict', 'escargots', 'falafel', 'filet_mignon', 'fish_and_chips', 'foie_gras', 'french_fries', 'french_onion_soup', 'french_toast', 'fried_calamari', 'fried_rice', 'frozen_yogurt', 'garlic_bread', 'gnocchi', 'greek_salad', 'grilled_cheese_sandwich', 'grilled_salmon', 'guacamole', 'gyoza', 'hamburger', 'hot_and_sour_soup', 'hot_dog', 'huevos_rancheros', 'hummus', 'ice_cream', 'lasagna', 'lobster_bisque', 'lobster_roll_sandwich', 'macaroni_and_cheese', 'macarons', 'miso_soup', 'mussels', 'nachos', 'omelette', 'onion_rings', 'oysters', 'pad_thai', 'paella', 'pancakes', 'panna_cotta', 'peking_duck', 'pho', 'pizza', 'pork_chop', 'poutine', 'prime_rib', 'pulled_pork_sandwich', 'ramen', 'ravioli', 'red_velvet_cake', 'risotto', 'samosa', 'sashimi', 'scallops', 'seaweed_salad', 'shrimp_and_grits', 'spaghetti_bolognese', 'spaghetti_carbonara', 'spring_rolls', 'steak', 'strawberry_shortcake', 'sushi', 'tacos', 'takoyaki', 'tiramisu', 'tuna_tartare', 'waffles']
+True
+13023
+test Loss: 1.2181 Acc: 0.0102
+Testing complete in 4m 10s
+Epoch 0/19
+----------
+LR is set to 0.001
+['apple_pie', 'baby_back_ribs', 'baklava', 'beef_carpaccio', 'beef_tartare', 'beet_salad', 'beignets', 'bibimbap', 'bread_pudding', 'breakfast_burrito', 'bruschetta', 'caesar_salad', 'cannoli', 'caprese_salad', 'carrot_cake', 'ceviche', 'cheese_plate', 'cheesecake', 'chicken_curry', 'chicken_quesadilla', 'chicken_wings', 'chocolate_cake', 'chocolate_mousse', 'churros', 'clam_chowder', 'club_sandwich', 'crab_cakes', 'creme_brulee', 'croque_madame', 'cup_cakes', 'deviled_eggs', 'donuts', 'dumplings', 'edamame', 'eggs_benedict', 'escargots', 'falafel', 'filet_mignon', 'fish_and_chips', 'foie_gras', 'french_fries', 'french_onion_soup', 'french_toast', 'fried_calamari', 'fried_rice', 'frozen_yogurt', 'garlic_bread', 'gnocchi', 'greek_salad', 'grilled_cheese_sandwich', 'grilled_salmon', 'guacamole', 'gyoza', 'hamburger', 'hot_and_sour_soup', 'hot_dog', 'huevos_rancheros', 'hummus', 'ice_cream', 'lasagna', 'lobster_bisque', 'lobster_roll_sandwich', 'macaroni_and_cheese', 'macarons', 'miso_soup', 'mussels', 'nachos', 'omelette', 'onion_rings', 'oysters', 'pad_thai', 'paella', 'pancakes', 'panna_cotta', 'peking_duck', 'pho', 'pizza', 'pork_chop', 'poutine', 'prime_rib', 'pulled_pork_sandwich', 'ramen', 'ravioli', 'red_velvet_cake', 'risotto', 'samosa', 'sashimi', 'scallops', 'seaweed_salad', 'shrimp_and_grits', 'spaghetti_bolognese', 'spaghetti_carbonara', 'spring_rolls', 'steak', 'strawberry_shortcake', 'sushi', 'tacos', 'takoyaki', 'tiramisu', 'tuna_tartare', 'waffles']
+True
+13023
+test Loss: 1.2248 Acc: 0.0096
+Testing complete in 4m 8s
+Epoch 0/19
+----------
+LR is set to 0.001
+['apple_pie', 'baby_back_ribs', 'baklava', 'beef_carpaccio', 'beef_tartare', 'beet_salad', 'beignets', 'bibimbap', 'bread_pudding', 'breakfast_burrito', 'bruschetta', 'caesar_salad', 'cannoli', 'caprese_salad', 'carrot_cake', 'ceviche', 'cheese_plate', 'cheesecake', 'chicken_curry', 'chicken_quesadilla', 'chicken_wings', 'chocolate_cake', 'chocolate_mousse', 'churros', 'clam_chowder', 'club_sandwich', 'crab_cakes', 'creme_brulee', 'croque_madame', 'cup_cakes', 'deviled_eggs', 'donuts', 'dumplings', 'edamame', 'eggs_benedict', 'escargots', 'falafel', 'filet_mignon', 'fish_and_chips', 'foie_gras', 'french_fries', 'french_onion_soup', 'french_toast', 'fried_calamari', 'fried_rice', 'frozen_yogurt', 'garlic_bread', 'gnocchi', 'greek_salad', 'grilled_cheese_sandwich', 'grilled_salmon', 'guacamole', 'gyoza', 'hamburger', 'hot_and_sour_soup', 'hot_dog', 'huevos_rancheros', 'hummus', 'ice_cream', 'lasagna', 'lobster_bisque', 'lobster_roll_sandwich', 'macaroni_and_cheese', 'macarons', 'miso_soup', 'mussels', 'nachos', 'omelette', 'onion_rings', 'oysters', 'pad_thai', 'paella', 'pancakes', 'panna_cotta', 'peking_duck', 'pho', 'pizza', 'pork_chop', 'poutine', 'prime_rib', 'pulled_pork_sandwich', 'ramen', 'ravioli', 'red_velvet_cake', 'risotto', 'samosa', 'sashimi', 'scallops', 'seaweed_salad', 'shrimp_and_grits', 'spaghetti_bolognese', 'spaghetti_carbonara', 'spring_rolls', 'steak', 'strawberry_shortcake', 'sushi', 'tacos', 'takoyaki', 'tiramisu', 'tuna_tartare', 'waffles']
+True
+['apple_pie', 'baby_back_ribs', 'baklava', 'beef_carpaccio', 'beef_tartare', 'beet_salad', 'beignets', 'bibimbap', 'bread_pudding', 'breakfast_burrito', 'bruschetta', 'caesar_salad', 'cannoli', 'caprese_salad', 'carrot_cake', 'ceviche', 'cheese_plate', 'cheesecake', 'chicken_curry', 'chicken_quesadilla', 'chicken_wings', 'chocolate_cake', 'chocolate_mousse', 'churros', 'clam_chowder', 'club_sandwich', 'crab_cakes', 'creme_brulee', 'croque_madame', 'cup_cakes', 'deviled_eggs', 'donuts', 'dumplings', 'edamame', 'eggs_benedict', 'escargots', 'falafel', 'filet_mignon', 'fish_and_chips', 'foie_gras', 'french_fries', 'french_onion_soup', 'french_toast', 'fried_calamari', 'fried_rice', 'frozen_yogurt', 'garlic_bread', 'gnocchi', 'greek_salad', 'grilled_cheese_sandwich', 'grilled_salmon', 'guacamole', 'gyoza', 'hamburger', 'hot_and_sour_soup', 'hot_dog', 'huevos_rancheros', 'hummus', 'ice_cream', 'lasagna', 'lobster_bisque', 'lobster_roll_sandwich', 'macaroni_and_cheese', 'macarons', 'miso_soup', 'mussels', 'nachos', 'omelette', 'onion_rings', 'oysters', 'pad_thai', 'paella', 'pancakes', 'panna_cotta', 'peking_duck', 'pho', 'pizza', 'pork_chop', 'poutine', 'prime_rib', 'pulled_pork_sandwich', 'ramen', 'ravioli', 'red_velvet_cake', 'risotto', 'samosa', 'sashimi', 'scallops', 'seaweed_salad', 'shrimp_and_grits', 'spaghetti_bolognese', 'spaghetti_carbonara', 'spring_rolls', 'steak', 'strawberry_shortcake', 'sushi', 'tacos', 'takoyaki', 'tiramisu', 'tuna_tartare', 'waffles']
+True
+13023
+test Loss: 0.3050 Acc: 0.0137
+Testing complete in 2m 34s
+Epoch 0/19
+----------
+LR is set to 0.001
+train Loss: 0.1962 Acc: 0.3028
+val Loss: 0.1592 Acc: 0.4045
+
+Epoch 1/19
+----------
+train Loss: 0.1548 Acc: 0.4244
+val Loss: 0.1484 Acc: 0.4411
+
+Epoch 2/19
+----------
+train Loss: 0.1464 Acc: 0.4500
+val Loss: 0.1447 Acc: 0.4538
+
+Epoch 3/19
+----------
+train Loss: 0.1418 Acc: 0.4644
+val Loss: 0.1420 Acc: 0.4669
+
+Epoch 4/19
+----------
+train Loss: 0.1389 Acc: 0.4724
+val Loss: 0.1412 Acc: 0.4690
+
+Epoch 5/19
+----------
+train Loss: 0.1371 Acc: 0.4800
+val Loss: 0.1401 Acc: 0.4715
+
+Epoch 6/19
+----------
+train Loss: 0.1354 Acc: 0.4845
+val Loss: 0.1408 Acc: 0.4681
+
+Epoch 7/19
+----------
+LR is set to 0.0001
+train Loss: 0.1286 Acc: 0.5105
+val Loss: 0.1381 Acc: 0.4788
+
+Epoch 8/19
+----------
+train Loss: 0.1286 Acc: 0.5127
+val Loss: 0.1372 Acc: 0.4828
+
+Epoch 9/19
+----------
+train Loss: 0.1282 Acc: 0.5124
+val Loss: 0.1383 Acc: 0.4796
+
+Epoch 10/19
+----------
+train Loss: 0.1283 Acc: 0.5136
+val Loss: 0.1377 Acc: 0.4813
+
+Epoch 11/19
+----------
+train Loss: 0.1281 Acc: 0.5126
+val Loss: 0.1369 Acc: 0.4845
+
+Epoch 12/19
+----------
+train Loss: 0.1279 Acc: 0.5131
+val Loss: 0.1372 Acc: 0.4832
+
+Epoch 13/19
+----------
+train Loss: 0.1276 Acc: 0.5167
+val Loss: 0.1376 Acc: 0.4832
+
+Epoch 14/19
+----------
+LR is set to 1e-05
+train Loss: 0.1270 Acc: 0.5181
+val Loss: 0.1366 Acc: 0.4880
+
+Epoch 15/19
+----------
+train Loss: 0.1271 Acc: 0.5165
+val Loss: 0.1374 Acc: 0.4800
+
+Epoch 16/19
+----------
+train Loss: 0.1272 Acc: 0.5183
+val Loss: 0.1370 Acc: 0.4863
+
+Epoch 17/19
+----------
+train Loss: 0.1267 Acc: 0.5192
+val Loss: 0.1363 Acc: 0.4889
+
+Epoch 18/19
+----------
+train Loss: 0.1269 Acc: 0.5169
+val Loss: 0.1371 Acc: 0.4822
+
+Epoch 19/19
+----------
+train Loss: 0.1271 Acc: 0.5160
+val Loss: 0.1360 Acc: 0.4892
+
+Training complete in 300m 53s
+Best val Acc: 0.489245
+13023
+test Loss: 0.1374 Acc: 0.4873
+Testing complete in 2m 35s
+Epoch 0/9
+----------
+LR is set to 0.001
+train Loss: 0.1270 Acc: 0.5175
+val Loss: 0.1370 Acc: 0.4849
+
+Epoch 1/9
+----------
+train Loss: 0.1266 Acc: 0.5200
+val Loss: 0.1373 Acc: 0.4835
+
+Epoch 2/9
+----------
+train Loss: 0.1271 Acc: 0.5183
+val Loss: 0.1371 Acc: 0.4829
+
+Epoch 3/9
+----------
+train Loss: 0.1269 Acc: 0.5175
+val Loss: 0.1369 Acc: 0.4829
+
+Epoch 4/9
+----------
+train Loss: 0.1268 Acc: 0.5177
+val Loss: 0.1374 Acc: 0.4846
+
+Epoch 5/9
+----------
+train Loss: 0.1269 Acc: 0.5181
+val Loss: 0.1362 Acc: 0.4906
+
+Epoch 6/9
+----------
+train Loss: 0.1267 Acc: 0.5210
+val Loss: 0.1376 Acc: 0.4832
+
+Epoch 7/9
+----------
+LR is set to 0.0001
+train Loss: 0.1271 Acc: 0.5168
+val Loss: 0.1373 Acc: 0.4854
+
+Epoch 8/9
+----------
+train Loss: 0.1271 Acc: 0.5173
+val Loss: 0.1366 Acc: 0.4875
+
+Epoch 9/9
+----------
+train Loss: 0.1268 Acc: 0.5167
+val Loss: 0.1363 Acc: 0.4912
+
+Training complete in 333m 31s
+Best val Acc: 0.491173
+13023
+test Loss: 0.1376 Acc: 0.4902
+Testing complete in 2m 35s
+['apple_pie', 'baby_back_ribs', 'baklava', 'beef_carpaccio', 'beef_tartare', 'beet_salad', 'beignets', 'bibimbap', 'bread_pudding', 'breakfast_burrito', 'bruschetta', 'caesar_salad', 'cannoli', 'caprese_salad', 'carrot_cake', 'ceviche', 'cheese_plate', 'cheesecake', 'chicken_curry', 'chicken_quesadilla', 'chicken_wings', 'chocolate_cake', 'chocolate_mousse', 'churros', 'clam_chowder', 'club_sandwich', 'crab_cakes', 'creme_brulee', 'croque_madame', 'cup_cakes', 'deviled_eggs', 'donuts', 'dumplings', 'edamame', 'eggs_benedict', 'escargots', 'falafel', 'filet_mignon', 'fish_and_chips', 'foie_gras', 'french_fries', 'french_onion_soup', 'french_toast', 'fried_calamari', 'fried_rice', 'frozen_yogurt', 'garlic_bread', 'gnocchi', 'greek_salad', 'grilled_cheese_sandwich', 'grilled_salmon', 'guacamole', 'gyoza', 'hamburger', 'hot_and_sour_soup', 'hot_dog', 'huevos_rancheros', 'hummus', 'ice_cream', 'lasagna', 'lobster_bisque', 'lobster_roll_sandwich', 'macaroni_and_cheese', 'macarons', 'miso_soup', 'mussels', 'nachos', 'omelette', 'onion_rings', 'oysters', 'pad_thai', 'paella', 'pancakes', 'panna_cotta', 'peking_duck', 'pho', 'pizza', 'pork_chop', 'poutine', 'prime_rib', 'pulled_pork_sandwich', 'ramen', 'ravioli', 'red_velvet_cake', 'risotto', 'samosa', 'sashimi', 'scallops', 'seaweed_salad', 'shrimp_and_grits', 'spaghetti_bolognese', 'spaghetti_carbonara', 'spring_rolls', 'steak', 'strawberry_shortcake', 'sushi', 'tacos', 'takoyaki', 'tiramisu', 'tuna_tartare', 'waffles']
+True

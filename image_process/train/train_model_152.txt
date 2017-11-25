@@ -1,0 +1,222 @@
+['apple_pie', 'baby_back_ribs', 'baklava', 'beef_carpaccio', 'beef_tartare', 'beet_salad', 'beignets', 'bibimbap', 'bread_pudding', 'breakfast_burrito', 'bruschetta', 'caesar_salad', 'cannoli', 'caprese_salad', 'carrot_cake', 'ceviche', 'cheese_plate', 'cheesecake', 'chicken_curry', 'chicken_quesadilla', 'chicken_wings', 'chocolate_cake', 'chocolate_mousse', 'churros', 'clam_chowder', 'club_sandwich', 'crab_cakes', 'creme_brulee', 'croque_madame', 'cup_cakes', 'deviled_eggs', 'donuts', 'dumplings', 'edamame', 'eggs_benedict', 'escargots', 'falafel', 'filet_mignon', 'fish_and_chips', 'foie_gras', 'french_fries', 'french_onion_soup', 'french_toast', 'fried_calamari', 'fried_rice', 'frozen_yogurt', 'garlic_bread', 'gnocchi', 'greek_salad', 'grilled_cheese_sandwich', 'grilled_salmon', 'guacamole', 'gyoza', 'hamburger', 'hot_and_sour_soup', 'hot_dog', 'huevos_rancheros', 'hummus', 'ice_cream', 'lasagna', 'lobster_bisque', 'lobster_roll_sandwich', 'macaroni_and_cheese', 'macarons', 'miso_soup', 'mussels', 'nachos', 'omelette', 'onion_rings', 'oysters', 'pad_thai', 'paella', 'pancakes', 'panna_cotta', 'peking_duck', 'pho', 'pizza', 'pork_chop', 'poutine', 'prime_rib', 'pulled_pork_sandwich', 'ramen', 'ravioli', 'red_velvet_cake', 'risotto', 'samosa', 'sashimi', 'scallops', 'seaweed_salad', 'shrimp_and_grits', 'spaghetti_bolognese', 'spaghetti_carbonara', 'spring_rolls', 'steak', 'strawberry_shortcake', 'sushi', 'tacos', 'takoyaki', 'tiramisu', 'tuna_tartare', 'waffles']
+True
+13023
+test Loss: 0.2936 Acc: 0.0075
+Testing complete in 6m 32s
+Epoch 0/19
+----------
+LR is set to 0.001
+train Loss: 0.1890 Acc: 0.3408
+val Loss: 0.1475 Acc: 0.4549
+
+Epoch 1/19
+----------
+train Loss: 0.1459 Acc: 0.4605
+val Loss: 0.1365 Acc: 0.4916
+
+Epoch 2/19
+----------
+train Loss: 0.1371 Acc: 0.4859
+val Loss: 0.1330 Acc: 0.4952
+
+Epoch 3/19
+----------
+train Loss: 0.1328 Acc: 0.4982
+val Loss: 0.1310 Acc: 0.5037
+
+Epoch 4/19
+----------
+train Loss: 0.1292 Acc: 0.5085
+val Loss: 0.1294 Acc: 0.5110
+
+Epoch 5/19
+----------
+train Loss: 0.1270 Acc: 0.5167
+val Loss: 0.1295 Acc: 0.5120
+
+Epoch 6/19
+----------
+train Loss: 0.1250 Acc: 0.5217
+val Loss: 0.1295 Acc: 0.5110
+
+Epoch 7/19
+----------
+LR is set to 0.0001
+train Loss: 0.1195 Acc: 0.5486
+val Loss: 0.1258 Acc: 0.5254
+
+Epoch 8/19
+----------
+train Loss: 0.1192 Acc: 0.5492
+val Loss: 0.1239 Acc: 0.5334
+
+Epoch 9/19
+----------
+train Loss: 0.1188 Acc: 0.5511
+val Loss: 0.1239 Acc: 0.5342
+
+Epoch 10/19
+----------
+train Loss: 0.1188 Acc: 0.5501
+val Loss: 0.1248 Acc: 0.5298
+
+Epoch 11/19
+----------
+train Loss: 0.1186 Acc: 0.5511
+val Loss: 0.1245 Acc: 0.5317
+
+Epoch 12/19
+----------
+train Loss: 0.1184 Acc: 0.5538
+val Loss: 0.1241 Acc: 0.5327
+
+Epoch 13/19
+----------
+train Loss: 0.1180 Acc: 0.5525
+val Loss: 0.1241 Acc: 0.5316
+
+Epoch 14/19
+----------
+LR is set to 1e-05
+train Loss: 0.1177 Acc: 0.5549
+val Loss: 0.1243 Acc: 0.5292
+
+Epoch 15/19
+----------
+train Loss: 0.1174 Acc: 0.5562
+val Loss: 0.1235 Acc: 0.5320
+
+Epoch 16/19
+----------
+train Loss: 0.1176 Acc: 0.5541
+val Loss: 0.1234 Acc: 0.5390
+
+Epoch 17/19
+----------
+train Loss: 0.1177 Acc: 0.5563
+val Loss: 0.1246 Acc: 0.5315
+
+Epoch 18/19
+----------
+train Loss: 0.1178 Acc: 0.5551
+val Loss: 0.1235 Acc: 0.5370
+
+Epoch 19/19
+----------
+train Loss: 0.1175 Acc: 0.5551
+val Loss: 0.1247 Acc: 0.5296
+
+Training complete in 778m 24s
+Best val Acc: 0.538972
+13023
+test Loss: 0.1254 Acc: 0.5325
+Testing complete in 6m 37s
+Epoch 0/9
+----------
+LR is set to 0.001
+train Loss: 0.1121 Acc: 0.5722
+['apple_pie', 'baby_back_ribs', 'baklava', 'beef_carpaccio', 'beef_tartare', 'beet_salad', 'beignets', 'bibimbap', 'bread_pudding', 'breakfast_burrito', 'bruschetta', 'caesar_salad', 'cannoli', 'caprese_salad', 'carrot_cake', 'ceviche', 'cheese_plate', 'cheesecake', 'chicken_curry', 'chicken_quesadilla', 'chicken_wings', 'chocolate_cake', 'chocolate_mousse', 'churros', 'clam_chowder', 'club_sandwich', 'crab_cakes', 'creme_brulee', 'croque_madame', 'cup_cakes', 'deviled_eggs', 'donuts', 'dumplings', 'edamame', 'eggs_benedict', 'escargots', 'falafel', 'filet_mignon', 'fish_and_chips', 'foie_gras', 'french_fries', 'french_onion_soup', 'french_toast', 'fried_calamari', 'fried_rice', 'frozen_yogurt', 'garlic_bread', 'gnocchi', 'greek_salad', 'grilled_cheese_sandwich', 'grilled_salmon', 'guacamole', 'gyoza', 'hamburger', 'hot_and_sour_soup', 'hot_dog', 'huevos_rancheros', 'hummus', 'ice_cream', 'lasagna', 'lobster_bisque', 'lobster_roll_sandwich', 'macaroni_and_cheese', 'macarons', 'miso_soup', 'mussels', 'nachos', 'omelette', 'onion_rings', 'oysters', 'pad_thai', 'paella', 'pancakes', 'panna_cotta', 'peking_duck', 'pho', 'pizza', 'pork_chop', 'poutine', 'prime_rib', 'pulled_pork_sandwich', 'ramen', 'ravioli', 'red_velvet_cake', 'risotto', 'samosa', 'sashimi', 'scallops', 'seaweed_salad', 'shrimp_and_grits', 'spaghetti_bolognese', 'spaghetti_carbonara', 'spring_rolls', 'steak', 'strawberry_shortcake', 'sushi', 'tacos', 'takoyaki', 'tiramisu', 'tuna_tartare', 'waffles']
+True
+0.538971551924
+Epoch 0/9
+----------
+LR is set to 0.001
+train Loss: 0.5824 Acc: 0.4455
+val Loss: 0.4934 Acc: 0.5634
+
+Epoch 1/9
+----------
+train Loss: 0.4477 Acc: 0.5661
+val Loss: 0.4941 Acc: 0.5725
+
+Epoch 2/9
+----------
+train Loss: 0.3823 Acc: 0.6231
+val Loss: 0.4730 Acc: 0.6095
+
+Epoch 3/9
+----------
+train Loss: 0.3297 Acc: 0.6685
+val Loss: 0.4964 Acc: 0.6036
+
+Epoch 4/9
+----------
+train Loss: 0.2843 Acc: 0.7096
+val Loss: 0.5174 Acc: 0.6087
+
+Epoch 5/9
+----------
+train Loss: 0.2473 Acc: 0.7408
+val Loss: 0.5007 Acc: 0.6115
+
+Epoch 6/9
+----------
+train Loss: 0.2101 Acc: 0.7769
+val Loss: 0.5538 Acc: 0.6144
+
+Epoch 7/9
+----------
+LR is set to 0.0001
+train Loss: 0.0809 Acc: 0.9161
+val Loss: 0.5259 Acc: 0.6613
+
+Epoch 8/9
+----------
+train Loss: 0.0442 Acc: 0.9571
+val Loss: 0.5393 Acc: 0.6603
+
+Epoch 9/9
+----------
+train Loss: 0.0307 Acc: 0.9710
+val Loss: 0.5707 Acc: 0.6582
+
+Training complete in 1165m 36s
+Best val Acc: 0.661321
+13023
+test Loss: 0.5498 Acc: 0.6489
+0.661321409298
+Epoch 0/9
+----------
+LR is set to 0.0001
+['apple_pie', 'baby_back_ribs', 'baklava', 'beef_carpaccio', 'beef_tartare', 'beet_salad', 'beignets', 'bibimbap', 'bread_pudding', 'breakfast_burrito', 'bruschetta', 'caesar_salad', 'cannoli', 'caprese_salad', 'carrot_cake', 'ceviche', 'cheese_plate', 'cheesecake', 'chicken_curry', 'chicken_quesadilla', 'chicken_wings', 'chocolate_cake', 'chocolate_mousse', 'churros', 'clam_chowder', 'club_sandwich', 'crab_cakes', 'creme_brulee', 'croque_madame', 'cup_cakes', 'deviled_eggs', 'donuts', 'dumplings', 'edamame', 'eggs_benedict', 'escargots', 'falafel', 'filet_mignon', 'fish_and_chips', 'foie_gras', 'french_fries', 'french_onion_soup', 'french_toast', 'fried_calamari', 'fried_rice', 'frozen_yogurt', 'garlic_bread', 'gnocchi', 'greek_salad', 'grilled_cheese_sandwich', 'grilled_salmon', 'guacamole', 'gyoza', 'hamburger', 'hot_and_sour_soup', 'hot_dog', 'huevos_rancheros', 'hummus', 'ice_cream', 'lasagna', 'lobster_bisque', 'lobster_roll_sandwich', 'macaroni_and_cheese', 'macarons', 'miso_soup', 'mussels', 'nachos', 'omelette', 'onion_rings', 'oysters', 'pad_thai', 'paella', 'pancakes', 'panna_cotta', 'peking_duck', 'pho', 'pizza', 'pork_chop', 'poutine', 'prime_rib', 'pulled_pork_sandwich', 'ramen', 'ravioli', 'red_velvet_cake', 'risotto', 'samosa', 'sashimi', 'scallops', 'seaweed_salad', 'shrimp_and_grits', 'spaghetti_bolognese', 'spaghetti_carbonara', 'spring_rolls', 'steak', 'strawberry_shortcake', 'sushi', 'tacos', 'takoyaki', 'tiramisu', 'tuna_tartare', 'waffles']
+True
+0.661321409298
+Epoch 0/9
+----------
+LR is set to 0.0001
+train Loss: 0.0448 Acc: 0.9564
+val Loss: 0.5398 Acc: 0.6579
+
+Epoch 1/9
+----------
+train Loss: 0.0307 Acc: 0.9713
+val Loss: 0.5643 Acc: 0.6575
+
+Epoch 2/9
+----------
+train Loss: 0.0223 Acc: 0.9804
+val Loss: 0.5734 Acc: 0.6602
+
+Epoch 3/9
+----------
+train Loss: 0.0179 Acc: 0.9846
+val Loss: 0.5897 Acc: 0.6547
+
+Epoch 4/9
+----------
+train Loss: 0.0154 Acc: 0.9873
+val Loss: 0.5832 Acc: 0.6548
+
+Epoch 5/9
+----------
+train Loss: 0.0129 Acc: 0.9891
+val Loss: 0.5826 Acc: 0.6552
+
+Epoch 6/9
+----------
+train Loss: 0.0114 Acc: 0.9906
+val Loss: 0.5925 Acc: 0.6578
+
+Epoch 7/9
+----------
+LR is set to 1e-05
