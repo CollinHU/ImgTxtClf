@@ -1,3 +1,6 @@
+Dataset: http://visiir.lip6.fr/data/public/UPMC_Food101.tar.gz
+Related Paper: http://visiir.univ-lr.fr/images/publication/CEA_ICME2015.pdf
+
 1.clean data
 1)remove meaningless marks such as |, #, _, ! and extra whitespace
 2) remove stop words
